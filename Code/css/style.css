@@ -1,0 +1,10 @@
+html, body, #map {
+	height: 100%;
+	width:640px;
+}
+
+#index, #uebersicht, #details, #filter, #location1, #index .ui-content {
+	height: 95%;
+	width: 640px;
+	padding:0;
+}
