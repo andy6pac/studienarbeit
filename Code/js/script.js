@@ -1,14 +1,15 @@
-$(document).on('pageinit','#index',initMap);
+$(document).on('pageinit','#karte',initMap);
 $(document).on('pageshow', '#uebersicht', prepareForm)
 
 function initMap() {
+	console.log('working');
 	var myOptions = {
 		zoom: 7,
 		center: new google.maps.LatLng(50.76, 11.64),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
 
-	//map = new google.maps.Map(document.getElementById('map'), myOptions);
+	map = new google.maps.Map(document.getElementById('map'), myOptions);
 
 	navigator.geolocation.getCurrentPosition(
 		function(position){
@@ -80,7 +81,7 @@ function prepareForm(){
 function LocationError(){
 	$.mobile.loading('hide');
 	alert('Leider ist die Bestimmung der Position nicht möglich');
-	$.mobile.changePage('#index');
+	$.mobile.changePage('#uebersicht');
 }
 
 function LocationOk(position){
@@ -101,9 +102,9 @@ function doReverseGeoCoding(position){
 		function (results, status){
 			if (status == 'OK'){
 				if (results[0]){
-					$('#geocodedAdress').text(
+					$('#suchfeld').attr('value',results[0].formatted_address);/*text(
 						results[0].formatted_address
-					);
+					);*/
 				}
 			}
 		}

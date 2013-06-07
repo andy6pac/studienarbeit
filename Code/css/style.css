@@ -1,10 +1,25 @@
 html, body, #map {
 	height: 100%;
-	width:640px;
 }
 
-#index, #uebersicht, #details, #filter, #location1, #index .ui-content {
+#index, #uebersicht, #details, #filter, #location1, #location2, #location3, #index .ui-content {
 	height: 95%;
-	width: 640px;
 	padding:0;
+}
+
+.ui-icon-facebook {
+	background-image: url("../images/facebook_w.png");
+}
+
+.ui-block-a, .ui-block-b ,.ui-block-d ,.ui-block-c ,.ui-block-e {
+	padding-top: 10px;
+}
+
+.ui-block-a {
+	width: 100px;
+}
+
+h3.ui-li-desc, .ui-li-aside{
+	font-weight: bold;
+	font-size: 16px;
 }

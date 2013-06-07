@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 06. Jun 2013 um 18:16
+-- Erstellungszeit: 07. Jun 2013 um 23:56
 -- Server Version: 5.5.29
 -- PHP-Version: 5.4.10
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `locatebillard`
 --
-CREATE DATABASE `locatebillard` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `locatebillard`;
 
 -- --------------------------------------------------------
 
@@ -50,7 +48,7 @@ CREATE TABLE `Locations` (
   `snooker_preis` double(5,2) NOT NULL,
   `pool_preis` double(5,2) NOT NULL,
   `carambol_preis` double(5,2) NOT NULL,
-  `speisen` tinyint(1) NOT NULL,
+  `speisen` varchar(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -59,9 +57,9 @@ CREATE TABLE `Locations` (
 --
 
 INSERT INTO `Locations` (`id`, `name`, `lokalitaet`, `bewertung`, `strasse`, `hausnummer`, `plz`, `ort`, `telefon`, `email`, `internet`, `zeiten`, `snooker`, `pool`, `carambol`, `sieben_ft`, `acht_ft`, `neun_ft`, `snooker_preis`, `pool_preis`, `carambol_preis`, `speisen`) VALUES
-(1, 'Parapluie', 'Billardbistro', 4, 'Raigeringer Strasse', '25a', '92224', 'Amberg', '09621/83322', 'info@parapluie.de', 'www.parapluie.de', 'täglich von 10.00 bis 1.00 Uhr', 0, 9, 0, 0, 0, 1, 0.00, 6.00, 0.00, 1),
-(2, 'Hallenbad', 'Spielothek', 3, 'Rosenbachstraße', '12', '92237', 'Sulzbach-Rosenberg', '09661/874999', 'info@hallenbad.de', 'www.hallenbad.de', 'täglich von 9.00 bis 3.00 Uhr', 2, 7, 0, 0, 0, 1, 6.00, 6.00, 0.00, 0),
-(3, 'Sportland Erlangen', 'Sonstige', 5, 'Münchener Strasse', '55', '91054', 'Erlangen', '09131/22024', 'info@sportland.de', 'www.sportland.de', 'täglich von 9.00 bis 2.00 Uhr', 4, 10, 0, 0, 1, 1, 9.50, 8.50, 0.00, 1);
+(1, 'Parapluie', 'Billardbistro', 4, 'Raigeringer Stra&szlig;e', '25a', '92224', 'Amberg', '09621/83322', 'info@parapluie.de', 'www.parapluie.de', 't&auml;glich von 10.00 bis 1.00 Uhr', 0, 9, 0, 0, 0, 1, 0.00, 6.00, 0.00, 'Ja'),
+(2, 'Hallenbad', 'Spielothek', 3, 'Rosenbachstra&szlig;e', '12', '92237', 'Sulzbach-Rosenberg', '09661/874999', 'info@hallenbad.de', 'www.hallenbad.de', 't&auml;glich von 9.00 bis 3.00 Uhr', 2, 7, 0, 0, 0, 1, 6.00, 6.00, 0.00, 'Nein'),
+(3, 'Sportland', 'Sonstige', 5, 'M&uuml;nchener Stra&szlig;e', '55', '91054', 'Erlangen', '09131/22024', 'info@sportland.de', 'www.sportland.de', 't&auml;glich von 9.00 bis 2.00 Uhr', 4, 10, 0, 0, 1, 1, 9.50, 8.50, 0.00, 'Ja');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
